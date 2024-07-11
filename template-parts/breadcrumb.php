@@ -23,12 +23,25 @@
 <?php
 
 // ページ情報
-$postId = $post->ID;
-$parentPostArry = array_reverse(get_post_ancestors($post));
-$postTypeObject = get_post_type_object(get_post_type());
-$postTypeName = $postTypeObject->labels->name;
-$taxonomySlug = get_query_var('taxonomy');
-$termName = urldecode(get_query_var('term'));
+if (isset($post)) {
+  $postId = $post->ID;
+  $parentPostArry = array_reverse(get_post_ancestors($post));
+  $postTypeObject = get_post_type_object(get_post_type());
+  if ($postTypeObject) {
+      $postTypeName = $postTypeObject->labels->name;
+  } else {
+      $postTypeName = '';
+  }
+  $taxonomySlug = get_query_var('taxonomy');
+  $termName = urldecode(get_query_var('term'));
+} else {
+  $postId = null;
+  $parentPostArry = [];
+  $postTypeName = '';
+  $taxonomySlug = get_query_var('taxonomy');
+  $termName = urldecode(get_query_var('term'));
+}
+
 
 // アロー設定
 $arrow_option = '<img src="' . get_template_directory_uri() . '/images/svg/bread.svg">';

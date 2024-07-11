@@ -3,37 +3,35 @@
 function get_page_slug()
 {
   global $post;
-  $slug = $post->post_name;
+  $slug = '';
+
+  if (isset($post) && !empty($post->post_name)) {
+    $slug = $post->post_name;
+  }
+
   if (is_home() || is_front_page()) {
     $slug = "index";
-  }
-  if (is_date()) {
+  } elseif (is_date()) {
     $slug = "date";
-  }
-  if (is_archive()) {
+  } elseif (is_archive()) {
     $slug = "archive";
-  }
-  if (is_404()) {
+  } elseif (is_404()) {
     $slug = "404";
-  }
-  if (is_category()) {
+  } elseif (is_category()) {
     $slug = "category";
-  }
-  if (is_tax()) {
+  } elseif (is_tax()) {
     $slug = "taxonomy";
-  }
-  if (is_tag()) {
+  } elseif (is_tag()) {
     $slug = "tag";
-  }
-  if (is_single()) {
+  } elseif (is_single()) {
     $slug = "single";
-  }
-  if (is_admin()) {
+  } elseif (is_admin()) {
     $slug = "admin";
   }
 
   return $slug;
 }
+
 
 // 和暦取得 ================================================
 function get_wareki($year, $format = false, $gannen = false)
