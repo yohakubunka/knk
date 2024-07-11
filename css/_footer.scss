@@ -1,0 +1,97 @@
+#footer {
+	margin-top: -1px;
+	padding: 120px 0;
+	background-color: $color3;
+	@include sp {
+		padding: 64px 0;
+	}
+	.footer {
+		position: relative;
+		#page_top {
+			position: absolute;
+			top: -145px;
+			right: 24px;
+			@include sp {
+				top: -94px;
+				right: 16px;
+			}
+		}
+		&__content {
+			&--top {
+				padding-bottom: 24px;
+				.footer-flex {
+					position: relative;
+					@include flex(between, center);
+					.nav-flex {
+						@include flex(0, center);
+						@include lg {
+							display: none;
+						}
+						li {
+							margin-right: 80px;
+							&:last-of-type {
+								margin-right: 0;
+							}
+							.ac-parent {
+								@include flex(0, center);
+								&::after {
+									content: "";
+									background-image: url(../images/svg/up-arrow_w.svg);
+									background-repeat: no-repeat;
+									width: 17px;
+									height: 10px;
+									margin-left: 8px;
+									display: block;
+									transform: rotateX(180deg);
+									transition: 0.5s;
+								}
+								&.open {
+									&::after {
+										transform: rotateX(0deg);
+										transition: 0.5s;
+									}
+								}
+							}
+							.nav-in {
+								position: absolute;
+								width: 100%;
+								max-width: 240px;
+								top: 100%;
+								display: none;
+								a {
+									display: inline-block;
+									padding-top: 16px;
+								}
+							}
+						}
+					}
+				}
+			}
+			&--bottom {
+				@include flex(between, end);
+				@include sp {
+					display: block;
+				}
+				.footer-data {
+					p {
+						padding-bottom: 4px;
+						&:last-of-type {
+							padding-bottom: 0;
+						}
+					}
+				}
+				.address {
+					img {
+						margin-left: 8px;
+					}
+				}
+				.copy {
+					@include sp {
+						text-align: right;
+						padding-top: 8px;
+					}
+				}
+			}
+		}
+	}
+}

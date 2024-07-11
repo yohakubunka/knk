@@ -1,0 +1,140 @@
+// TOPページ　実績紹介
+.works-slide {
+	.title-flex {
+		@include flex(between, center);
+		padding-bottom: 24px;
+		@include sp {
+			// @include flex(start, start, 0, 0, 1);
+			@include flex(start, center);
+		}
+		.sec-ttl {
+			@include sp {
+				padding-bottom: 0;
+			}
+		}
+	}
+	.btn {
+		@include sm {
+			margin-left: 24px;
+		}
+		&.btn-txt {
+			@include sp {
+				width: 100%;
+				max-width: 147px;
+				height: 40px;
+				font-size: 1.4rem;
+			}
+		}
+	}
+	.works-slide__content {
+		max-width: 100%;
+		width: 100%;
+		.swiper {
+			max-width: 1544px;
+			width: 100%;
+			margin-right: 0;
+			&-wrapper {
+				padding-bottom: 64px;
+				@include la {
+					padding-bottom: 56px;
+				}
+				@include sp {
+					padding-bottom: 48px;
+				}
+				.swiper-slide {
+					padding-right: 40px;
+					flex-flow: column;
+					@include flex(center);
+					@include xl {
+						max-width: calc(100% / 4);
+					}
+					@include lg {
+						padding-right: 20px;
+					}
+					@include sm {
+						max-width: calc(100% / 2);
+					}
+					@include sp {
+						max-width: 100%;
+						padding-right: 16px;
+						margin-right: 0;
+						max-width: 100%;
+					}
+					a {
+						max-width: 100%;
+						width: 100%;
+						.img {
+							width: 100%;
+							img {
+								border-radius: 40px;
+							}
+						}
+						.article-title {
+							padding: 24px 0 0 0;
+							@include second-truncate;
+						}
+					}
+					.data-category {
+						@include flex(between, center, wrap);
+						@include xs {
+							@include flex(start, start, 0, 0, 1);
+						}
+						p {
+							@include la {
+								padding-bottom: 16px;
+							}
+						}
+						ul {
+							li:nth-child(2) {
+								padding-top: 16px;
+							}
+						}
+					}
+				}
+			}
+			.swiper-pagination {
+				max-width: 100%;
+				width: 100%;
+				bottom: 0;
+				@include lg {
+					padding-right: 24px;
+					@include flex(start, start);
+				}
+				@include sm {
+					max-width: 600px;
+					// @include flex(between, start);
+				}
+				@include sp {
+					@include flex(center, start);
+					padding-right: 16px;
+				}
+				span {
+					width: 24px;
+					height: 24px;
+					margin: 0 40px 0 0;
+					cursor: none;
+					&:first-of-type {
+						margin-left: 0;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+					@include sm {
+						margin: 0 20px;
+					}
+					@include sp {
+						width: 16px;
+						height: 16px;
+						margin: 0 8px;
+					}
+				}
+				.swiper-pagination-bullet {
+					background-color: $color4;
+				}
+				.swiper-pagination-bullet-active {
+					background-color: $color7;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,173 @@
+#front {
+	.illumination-charm {
+		margin: 160px 0 64px 0;
+		padding: 0;
+		background-image: url(../images/front/top_sec00.jpg);
+		background-position: center, center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		@include sp {
+			margin: 64px 0 32px 0;
+		}
+		&__content {
+			padding: 120px 0;
+			@include sp {
+				padding: 64px 0;
+			}
+			.sec-ttl {
+				text-align: center;
+				padding-bottom: 24px;
+			}
+			&--flex {
+				@include flex(between, 0);
+				@include lg {
+					flex-wrap: wrap;
+					width: 100%;
+					max-width: 631px;
+					margin: 0 auto;
+				}
+				@include sp {
+					max-width: 234px;
+				}
+				.charm-item {
+					width: 100%;
+					max-width: 210px;
+					text-align: center;
+					@include lg {
+						max-width: calc((100% / 3) - 8px);
+					}
+					@include sp {
+						max-width: 108px;
+					}
+					svg {
+						width: 50px;
+						height: 50px;
+						margin-bottom: 16px;
+						@include lg {
+							width: 48px;
+							height: 48px;
+						}
+						path {
+							fill: $color1;
+						}
+					}
+					@include lg {
+						&:nth-of-type(1),
+						&:nth-of-type(2),
+						&:nth-of-type(3) {
+							margin-bottom: 24px;
+						}
+					}
+					@include sp {
+						&:nth-of-type(4) {
+							margin-bottom: 24px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.illumination-sale,
+	.illumination-work,
+	.illumination-other {
+		.common-flex {
+			padding-top: 24px;
+		}
+	}
+	.works-slide {
+		&__content {
+			&--article {
+				.work-item {
+					a {
+						.img-wrap {
+							position: relative;
+							height: auto;
+							padding-top: 100%;
+							overflow: hidden;
+							border-radius: 40px;
+							@include xs {
+								max-width: 100%;
+								width: 100%;
+							}
+							.img {
+								width: 100%;
+								padding-top: 100%;
+								z-index: 1;
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								background-position: 50%;
+								background-repeat: no-repeat;
+								background-size: cover;
+								@include xs {
+									max-width: 100%;
+								}
+								img {
+									width: 100%;
+									max-width: 362px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.title-flex {
+			@include flex(between, center);
+			padding-bottom: 24px;
+		}
+	}
+	.front-news {
+		margin-top: 80px;
+		padding: 120px 0;
+		background-image: url(../images/front/top_sec04.png);
+		background-position: center, center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		@include sp {
+			margin-top: 64px;
+			padding: 64px 0;
+		}
+		&__content {
+			@include flex();
+			@include md {
+				display: block;
+			}
+			&--left {
+				width: 100%;
+				max-width: 240px;
+				@include md {
+					max-width: 100%;
+					padding-bottom: 64px;
+				}
+				h3 {
+					padding-bottom: 48px;
+				}
+			}
+			&--right {
+				width: 100%;
+				max-width: 784px;
+				margin-left: 144px;
+				@include lg {
+					margin-left: 80px;
+				}
+				@include md {
+					margin-left: 0;
+				}
+				.front-news-area {
+					&__row {
+						padding-bottom: 40px;
+						&:last-of-type {
+							padding-bottom: 0;
+						}
+						&--title {
+							@include lines-truncate;
+						}
+					}
+				}
+			}
+		}
+	}
+}

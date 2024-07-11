@@ -1,0 +1,36 @@
+#otherlight {
+  .ordermade {
+    .sec-ttl {
+      text-align: right;
+    }
+    .flex-content {
+      padding-top: 24px;
+      &__txt {
+        .sm-ttl {
+          padding-bottom: 24px;
+        }
+      }
+    }
+  }
+  .recruit {
+    .common-flex {
+      padding-top: 24px;
+    }
+  }
+  .service {
+    &__flex {
+      &--streetlight {
+        margin-right: 20px;
+        @include md {
+          margin: 0 auto 32px auto;
+        }
+      }
+      &--ledlight {
+        margin-left: 20px;
+        @include md {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

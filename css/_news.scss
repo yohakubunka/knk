@@ -1,0 +1,43 @@
+#news {
+  .news-wrap {
+    @include flex(between, start);
+    @include lg {
+      flex-direction: column-reverse;
+    }
+    &__list {
+      width: 100%;
+      max-width: 736px;
+      margin-right: 40px;
+      @include lg {
+        max-width: 100%;
+      }
+      article {
+        padding-bottom: 40px;
+        @include sp {
+          padding-bottom: 24px;
+        }
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+        a {
+          display: block;
+        }
+        .article-title {
+          @include lines-truncate;
+        }
+      }
+      .data-category {
+        &--date {
+          @include xs {
+            // margin-right: 24px;
+            margin-right: 32px;
+            padding-bottom: 0;
+          }
+        }
+        @include xs {
+          @include flex();
+        }
+      }
+    }
+  }
+}

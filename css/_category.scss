@@ -1,0 +1,198 @@
+#side-bar {
+	width: 100%;
+	max-width: 392px;
+	@include lg {
+		max-width: 100%;
+		padding-bottom: 40px;
+	}
+	.category {
+		margin-bottom: 24px;
+	}
+	.archive {
+		.monthly-list {
+			@include flex();
+			li {
+				margin: 4px 0;
+				padding-right: 24px;
+				// @include sp {
+				// 	margin: 4px 0;
+				// }
+				&:last-of-type {
+					padding-right: 0;
+				}
+				a {
+					@include flex();
+					padding: 8px 16px;
+					text-align: center;
+					border: 2px solid $color3;
+					border-radius: 4px;
+					@extend .noto_bl;
+					color: $color3;
+					font-size: 1.6rem;
+					letter-spacing: 0.1em;
+					line-height: 1.4em;
+					transition: 0.3s;
+					@include sp {
+						font-size: 1.4rem;
+						border: 2px solid $color3;
+					}
+					&:hover {
+						color: $color1;
+						background-color: $color3;
+						transition: 0.3s;
+					}
+				}
+				a::after {
+					content: "年";
+					display: block;
+				}
+			}
+		}
+	}
+	.category,
+	.archive {
+		padding: 40px;
+		background-color: $color6;
+		border-radius: 20px;
+		@include sp {
+			padding: 24px;
+		}
+		.sm-ttl {
+			margin: 4px 0;
+			padding-bottom: 24px;
+			@include sp {
+				margin: 0;
+				padding-bottom: 16px;
+			}
+		}
+		.category-flex {
+			@include flex();
+			flex-wrap: wrap;
+			.left-text-border {
+				margin-right: 24px;
+				padding: 0;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				a {
+					padding: 8px 16px;
+				}
+			}
+		}
+	}
+}
+#category-box {
+	.category {
+		@include flex();
+		@include lg {
+			display: block;
+		}
+		&__flex {
+			@include flex(0, center);
+			flex-wrap: wrap;
+			li {
+				margin: 12px 0;
+				padding-right: 24px;
+				@include sp {
+					margin: 4px 0;
+				}
+				&:last-of-type {
+					padding-right: 0;
+				}
+				@include sm {
+					padding-right: 16px;
+				}
+			}
+			.active {
+				a {
+					padding: 8px 16px;
+					color: $color1;
+					font-size: 1.6rem;
+					letter-spacing: 0.1em;
+					line-height: 1.4em;
+					background-color: $color3;
+					border: 2px solid $color3;
+					border-radius: 4px;
+					text-align: center;
+					transition: 0.3s;
+				}
+			}
+		}
+	}
+	.archive {
+		@include flex();
+		flex-wrap: wrap;
+		margin-top: 24px;
+		@include lg {
+			display: block;
+		}
+		.monthly-list {
+			@include flex();
+			li {
+				margin: 12px 0;
+				padding-right: 24px;
+				@include sp {
+					margin: 4px 0;
+					padding-right: 16px;
+				}
+				&:last-of-type {
+					padding-right: 0;
+				}
+			}
+			a {
+				@include flex();
+				padding: 8px 16px;
+				text-align: center;
+				border: 2px solid $color3;
+				border-radius: 4px;
+				@extend .noto_bl;
+				color: $color3;
+				font-size: 1.6rem;
+				letter-spacing: 0.1em;
+				line-height: 1.4em;
+				transition: 0.3s;
+				@include sp {
+					font-size: 1.4rem;
+					border: 2px solid $color3;
+				}
+				&:hover {
+					color: $color1;
+					background-color: $color3;
+					transition: 0.3s;
+				}
+			}
+			a::after {
+				content: "年";
+				display: block;
+			}
+		}
+	}
+	.category,
+	.archive {
+		padding: 40px;
+		background-color: $color6;
+		border-radius: 20px;
+		@include sp {
+			padding: 24px;
+		}
+		.sm-ttl {
+			margin: 12px 0;
+			padding: 0 40px 0 0;
+			flex-shrink: 0;
+			@include lg {
+				margin: 0;
+				padding: 0 0 16px 0;
+			}
+			@include sp {
+				padding: 0 0 8px 0;
+			}
+		}
+	}
+}
+.itempage_return {
+	padding-top: 16px;
+	@include flex(end, center);
+	a {
+		border-bottom: 1px solid $color3;
+	}
+}

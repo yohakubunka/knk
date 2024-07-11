@@ -1,0 +1,100 @@
+#streetlight {
+  .construction {
+    .sec-ttl {
+      text-align: right;
+    }
+    .flex-content {
+      padding-top: 24px;
+      &__txt {
+        .sm-ttl {
+          padding-bottom: 24px;
+        }
+      }
+    }
+  }
+  .case {
+    .flex-content {
+      padding-top: 24px;
+      &.flex-content-reserve {
+        .flex-content__box {
+          &.box-reserve {
+            @include lg {
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+      &__txt {
+        .sm-ttl {
+          padding-bottom: 24px;
+        }
+      }
+    }
+  }
+  .flow {
+    .sec-ttl {
+      text-align: right;
+    }
+    .common-flex {
+      padding-top: 24px;
+      &__img {
+        img {
+          max-width: 1162px;
+        }
+      }
+      &__txt {
+        max-width: 324px;
+        @include la {
+          max-width: 348px;
+        }
+        .flow-flex {
+          @include flex();
+          height: 83px;
+          margin-bottom: 13px;
+          .number {
+            position: relative;
+            padding-right: 24px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 16px;
+              width: 2px;
+              height: 40px;
+              display: block;
+              background-color: $color7;
+            }
+          }
+          &:last-of-type {
+            height: 35px;
+            margin-bottom: 0;
+            .number {
+              &::after {
+                display: none;
+              }
+            }
+            .flow-ttl {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .service {
+    &__flex {
+      &--ledlight {
+        margin-right: 20px;
+        @include md {
+          margin: 0 auto 32px auto;
+        }
+      }
+      &--otherlight {
+        margin-left: 20px;
+        @include md {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

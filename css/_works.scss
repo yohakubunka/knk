@@ -1,0 +1,166 @@
+#works {
+	.works {
+		&__content {
+			padding-top: 64px;
+			@include lg {
+				padding-top: 40px;
+			}
+			&--flex {
+				@include flex(start, start);
+				flex-wrap: wrap;
+				@include sp {
+					display: block;
+				}
+				.works-box {
+					width: 100%;
+					max-width: 362px;
+					margin-top: 64px;
+					&:nth-of-type(1),
+					&:nth-of-type(4),
+					&:nth-of-type(7),
+					&:nth-of-type(10) {
+						margin-right: 20px;
+					}
+					&:nth-of-type(2) {
+						margin-right: 20px;
+						margin-left: 20px;
+					}
+					&:nth-of-type(5),
+					&:nth-of-type(8),
+					&:nth-of-type(11) {
+						margin: 64px 20px 0;
+					}
+					&:nth-of-type(3),
+					&:nth-of-type(6),
+					&:nth-of-type(9),
+					&:nth-of-type(12) {
+						margin-left: 20px;
+					}
+					&:nth-of-type(1),
+					&:nth-of-type(2),
+					&:nth-of-type(3) {
+						margin-top: 0px;
+					}
+					@media screen and(max-width:1214px) {
+						max-width: calc((100% / 3) - 27px);
+					}
+					@include lg {
+						max-width: calc((100% / 3) - 11px);
+						&:nth-of-type(1),
+						&:nth-of-type(4),
+						&:nth-of-type(7),
+						&:nth-of-type(10) {
+							margin-right: 8px;
+						}
+						&:nth-of-type(2) {
+							margin-right: 8px;
+							margin-left: 8px;
+						}
+						&:nth-of-type(5),
+						&:nth-of-type(8),
+						&:nth-of-type(11) {
+							margin: 64px 8px 0;
+						}
+						&:nth-of-type(3),
+						&:nth-of-type(6),
+						&:nth-of-type(9),
+						&:nth-of-type(12) {
+							margin-left: 8px;
+						}
+					}
+					@include md {
+						max-width: calc((100% / 2) - 20px);
+						&:nth-of-type(1),
+						&:nth-of-type(3),
+						&:nth-of-type(5),
+						&:nth-of-type(7),
+						&:nth-of-type(9),
+						&:nth-of-type(11) {
+							margin-right: 20px;
+							margin-left: 0;
+						}
+						&:nth-of-type(2),
+						&:nth-of-type(4),
+						&:nth-of-type(6),
+						&:nth-of-type(8),
+						&:nth-of-type(10),
+						&:nth-of-type(12) {
+							margin-right: 0;
+							margin-left: 20px;
+						}
+						&:nth-of-type(3) {
+							margin-top: 64px;
+						}
+					}
+					@include sp {
+						margin-top: 48px;
+						max-width: 362px;
+						&:nth-of-type(1),
+						&:nth-of-type(3),
+						&:nth-of-type(5),
+						&:nth-of-type(7),
+						&:nth-of-type(9),
+						&:nth-of-type(11) {
+							margin-right: auto;
+							margin-left: auto;
+						}
+						&:nth-of-type(2),
+						&:nth-of-type(4),
+						&:nth-of-type(6),
+						&:nth-of-type(8),
+						&:nth-of-type(10),
+						&:nth-of-type(12) {
+							margin-right: auto;
+							margin-left: auto;
+						}
+						&:nth-of-type(2) {
+							margin-top: 48px;
+						}
+					}
+					.works-title {
+						padding-top: 24px;
+						.mini-txt {
+							@include second-truncate;
+						}
+					}
+					.works-pic {
+						img {
+							width: 100%;
+							height: 362px;
+							object-fit: cover;
+							object-position: center;
+							border-radius: 40px;
+							@include lg {
+								max-width: 100%;
+								width: 362px;
+								height: 240px;
+							}
+						}
+					}
+					.data-category {
+						@include lg {
+							display: block;
+						}
+						@include md {
+							@include flex();
+						}
+						@include sm {
+							@include flex(start, start, 0, 0, 1);
+						}
+						ul {
+							@include lg {
+								padding-top: 8px;
+							}
+							@include md {
+								padding-top: 0;
+							}
+							@include sm {
+								padding-top: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

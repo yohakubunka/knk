@@ -1,0 +1,137 @@
+#about {
+	.philosophy {
+		.sec-ttl {
+			text-align: right;
+		}
+		.flex-content {
+			padding-top: 24px;
+		}
+	}
+	.sdgs {
+		.flex-content {
+			padding-top: 24px;
+			&__box {
+				justify-content: flex-end;
+				@include sp {
+					justify-content: center;
+				}
+				.sdgs-img {
+					margin-top: 16px;
+					max-width: calc((100% / 4) - 8px);
+					@media screen and(max-width:1568px) {
+						max-width: calc((100% / 4) - 16px);
+					}
+					@include xl {
+						max-width: calc((100% / 4) - 8px);
+					}
+					@include sp {
+						max-width: calc((100% / 2) - 8px);
+					}
+					img {
+						width: 100%;
+					}
+					&:nth-of-type(1),
+					&:nth-of-type(5) {
+						margin-right: 8px;
+					}
+					&:nth-of-type(2),
+					&:nth-of-type(3),
+					&:nth-of-type(6),
+					&:nth-of-type(7) {
+						margin-right: 8px;
+						margin-left: 8px;
+						@include xl {
+							margin-right: 4px;
+							margin-left: 4px;
+						}
+					}
+					&:nth-of-type(4),
+					&:nth-of-type(8) {
+						margin-left: 8px;
+					}
+					&:nth-of-type(1),
+					&:nth-of-type(2),
+					&:nth-of-type(3),
+					&:nth-of-type(4) {
+						margin-top: 0;
+					}
+					@include sp {
+						&:nth-of-type(1),
+						&:nth-of-type(3),
+						&:nth-of-type(5),
+						&:nth-of-type(7) {
+							margin-left: 0;
+							margin-right: 8px;
+						}
+						&:nth-of-type(2),
+						&:nth-of-type(4),
+						&:nth-of-type(6),
+						&:nth-of-type(8) {
+							margin-left: 8px;
+							margin-right: 0;
+						}
+						&:nth-of-type(3),
+						&:nth-of-type(4) {
+							margin-top: 16px;
+						}
+					}
+				}
+				&.box-reserve {
+					margin-left: 0;
+				}
+			}
+			&__txt {
+				margin-right: 64px;
+				@include xl {
+					margin-right: 24px;
+				}
+				@include lg {
+					margin-right: auto;
+				}
+				br {
+					@include sp {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.overview {
+		.sec-ttl {
+			text-align: right;
+		}
+		.common-flex {
+			padding-top: 24px;
+		}
+		.overview-box {
+			@include flex();
+			padding-bottom: 24px;
+			@include sp {
+				display: block;
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+			ul {
+				li {
+					padding-bottom: 16px;
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+			.company-label {
+				width: 100%;
+				max-width: 100px;
+				padding-right: 24px;
+			}
+			&.address {
+				.txt {
+					img {
+						margin-left: 8px;
+					}
+				}
+			}
+		}
+	}
+}

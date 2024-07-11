@@ -1,0 +1,44 @@
+.footer-contact {
+  margin-top: 80px;
+  padding: 120px 0;
+  background-image: url(../images/footer/footer_bg.jpg);
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include sp {
+    padding: 64px 0;
+  }
+  .sm-ttl {
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  &__content {
+    @include flex(center, center);
+    @include md {
+      display: block;
+    }
+    &--tel,
+    &--form {
+      width: 100%;
+      max-width: 296px;
+      .tel-txt,
+      .form-txt {
+        padding-bottom: 16px;
+        text-align: center;
+      }
+    }
+    &--tel {
+      margin-right: 20px;
+      @include md {
+        margin: 0 auto;
+        padding-bottom: 24px;
+      }
+    }
+    &--form {
+      margin-left: 20px;
+      @include md {
+        margin: 0 auto;
+      }
+    }
+  }
+}

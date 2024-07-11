@@ -1,0 +1,27 @@
+.cardSwiper {
+    padding: 0 20px; //左右の余白はcontainerに指定する
+    .swiper-wrapper {
+        // padding: 30px 0;
+        .swiper-slide {
+            // slideに任意の幅と高さ指定
+            // max-width: 362px;
+            width: 100%;
+            // width: 362px !important;
+            // height: auto;
+            // 以下見た目調節
+            display: flex;
+            // flex-direction: column;
+            @include sm {
+                max-width: 288px;
+            }
+            a {
+                @include flex();
+                flex-direction: column;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

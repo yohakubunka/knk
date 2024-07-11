@@ -1,0 +1,45 @@
+.service {
+  .sm-ttl {
+    padding-bottom: 24px;
+    text-align: center;
+  }
+  &__flex {
+    @include flex(center, center);
+    @include md {
+      display: block;
+    }
+    &--streetlight {
+      background-image: url(../images/service/production-light_bg.jpg);
+    }
+    &--ledlight {
+      background-image: url(../images/service/led-light_bg.jpg);
+    }
+    &--otherlight {
+      background-image: url(../images/service/other-light_bg.jpg);
+    }
+    &--streetlight,
+    &--ledlight,
+    &--otherlight {
+      width: 100%;
+      max-width: 564px;
+      padding: 97px;
+      background-position: center, center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 40px;
+      @include lg {
+        padding: 48px;
+      }
+      @include sp {
+        padding: 40px;
+        border-radius: 20px;
+      }
+      .service-ttl {
+        padding-bottom: 24px;
+      }
+      .btn_w {
+        margin: 0 auto;
+      }
+    }
+  }
+}

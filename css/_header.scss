@@ -1,0 +1,185 @@
+#header {
+	position: relative;
+	.header {
+		@include flex(between, center);
+		position: fixed;
+		z-index: 10;
+		width: 100%;
+		height: 88px;
+		padding: 24px;
+		background-color: $color1;
+		box-shadow: 0 0 16px 0 rgba(0, 102, 133, 0.2);
+		@include sp {
+			height: 64px;
+			padding: 16px;
+		}
+		&__logo {
+			a {
+				img {
+					@include sp {
+						width: 100%;
+						max-width: 137px;
+					}
+				}
+			}
+		}
+		&__nav {
+			@include flex(0, center);
+			&--list {
+				margin-right: 64px;
+				@include lg {
+					display: none;
+				}
+				&:last-of-type {
+					margin-right: 0;
+					@include lg {
+						display: block;
+						margin-right: 40px;
+					}
+					@include sp {
+						display: none;
+						margin-right: 0;
+					}
+				}
+				.ac-parent {
+					@include flex(0, center);
+					&::after {
+						content: "";
+						background-image: url(../images/svg/up-arrow.svg);
+						background-repeat: no-repeat;
+						width: 17px;
+						height: 10px;
+						margin-left: 8px;
+						display: block;
+						transform: rotateX(180deg);
+					}
+					&.open {
+						&::after {
+							transform: rotateX(0deg);
+						}
+					}
+				}
+				.nav-in {
+					position: absolute;
+					width: 100%;
+					max-width: 242px;
+					top: 99%;
+					right: 596px;
+					padding: 24px;
+					background-color: $color1;
+					display: none;
+					a {
+						display: inline-block;
+						padding-bottom: 16px;
+						&:last-of-type {
+							padding-bottom: 0;
+						}
+					}
+				}
+				.contact-btn {
+					width: 100%;
+					max-width: 240px;
+					height: 64px;
+					background-color: $color1;
+					text-align: center;
+					border: 2px solid $color3;
+					border-radius: 4px;
+					transition: 0.3s;
+					&:hover {
+						transition: 0.3s;
+						background-color: $color3;
+					}
+					&.contact-cbtn-txt {
+						@include flex(center, center);
+						@extend .noto_bl;
+						height: 40px;
+						padding: 8px 16px;
+						color: $color3;
+						font-size: 1.6rem;
+						letter-spacing: 0.1em;
+						line-height: 1.4em;
+						transition: 0.3s;
+						&:hover {
+							color: $color1;
+							transition: 0.3s;
+						}
+					}
+				}
+			}
+			.menu-btn {
+				width: 100%;
+				max-width: 52px;
+				display: none;
+				@include lg {
+					display: block;
+				}
+				.openbtn {
+					position: relative; /*ボタン内側の基点となるためrelativeを指定*/
+					width: 52px;
+					height: 35px;
+					span {
+						display: inline-block;
+						transition: all 0.4s; /*アニメーションの設定*/
+						position: absolute;
+						width: 48px;
+						height: 4px;
+						background-color: $color3;
+						&:nth-of-type(1) {
+							top: 0;
+							right: 2px;
+						}
+						&:nth-of-type(2) {
+							top: 12px;
+							right: 2px;
+						}
+					}
+					p {
+						position: absolute;
+						bottom: 0;
+						right: 2px;
+						letter-spacing: 0; //letter-spacing分からない
+					}
+					&.active {
+						span {
+							&:nth-of-type(1) {
+								transform: translateY(6px) rotate(-20deg);
+							}
+							&:nth-of-type(2) {
+								transform: translateY(-6px) rotate(20deg);
+							}
+						}
+					}
+				}
+				.menu-open {
+					height: 100vh;
+					position: absolute;
+					top: 100%;
+					right: 0;
+					width: 100%;
+					max-width: 100%;
+					background-color: $color1;
+					display: none;
+					&__inner {
+						padding-top: 16px;
+						text-align: center;
+						&--list {
+							padding-bottom: 24px;
+							&.inner-contact {
+								display: none;
+								@include sp {
+									display: block;
+								}
+								.btn {
+									margin: 0 auto;
+									&.btn-txt {
+										font-size: 1.4rem;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
